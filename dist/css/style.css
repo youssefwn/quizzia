@@ -7,13 +7,13 @@
 body {
   background: #292b2c;
   font-family: "Lucida Sans Unicode", "Trebuchet MS", "Lucida Grande", "Lucida Sans", Arial, sans-serif;
-  height: 100vh;
   overflow: hidden;
 }
 
 #wrapper {
-  margin: auto 4rem;
+  margin: auto 3rem;
   text-align: center;
+  height: 100vh;
 }
 
 a {
@@ -40,19 +40,14 @@ button.choice:disabled {
   cursor: initial !important;
 }
 
+button.correct:disabled,
+button.wrong:disabled {
+  opacity: 1 !important;
+  border-width: 2px !important;
+}
+
 .show {
   display: initial !important;
-}
-
-.disabled {
-  color: initial !important;
-  cursor: default !important;
-}
-
-.disabled:hover {
-  background: initial !important;
-  color: initial !important;
-  cursor: default !important;
 }
 
 .correct {
@@ -119,18 +114,21 @@ button.choice:disabled {
 #body {
   background: #eee;
   margin-top: 1rem;
-  height: 85vh;
+  height: 100%;
 }
 
 #body #home {
   display: none;
+  padding: 0 5rem;
 }
 
-#body #home > * {
+#body #home > div {
   padding: 1rem 2rem;
 }
 
 #body #home #greeting {
+  padding-bottom: 1rem;
+  margin-bottom: 1rem;
   border-bottom: #292b2c 1px solid;
 }
 
@@ -141,16 +139,16 @@ button.choice:disabled {
   font-size: 1.2rem;
 }
 
-#body #home #options #options-form div {
+#body #home #options #options-form > div {
   display: grid;
-  grid-template-columns: 1fr 3fr;
+  grid-template-columns: 1fr 2fr;
 }
 
-#body #home #options #options-form div .options-label {
+#body #home #options #options-form > div .options-label {
   margin: auto;
 }
 
-#body #home #options #options-form div .options-input {
+#body #home #options #options-form > div .options-input {
   border: #4e5254 1px solid;
   border-radius: 5px;
   padding: 0.4rem;
@@ -184,13 +182,10 @@ button.choice:disabled {
   display: none;
 }
 
-#body #quiz > * {
-  padding: 1rem 2rem;
-}
-
 #body #quiz #quiz-top {
   display: flex;
   justify-content: space-evenly;
+  margin-bottom: 1rem;
 }
 
 #body #quiz #quiz-body {
@@ -300,12 +295,17 @@ button.choice:disabled {
 #body .modal > div {
   transform: translate(-50%, 0);
   position: absolute;
-  top: 40%;
+  top: 30%;
   left: 50%;
   font-size: 8rem;
+  background: #eee;
+  padding: 1rem;
 }
 
 @media (max-width: 1000px) {
+  html {
+    font-size: 14px;
+  }
   #header {
     grid-template-columns: 1fr 1fr 1fr;
   }
@@ -316,22 +316,18 @@ button.choice:disabled {
 }
 
 @media (max-width: 700px) {
+  html {
+    font-size: 14px;
+  }
   #wrapper {
     margin: auto 2rem;
-  }
-  #header #author {
-    display: flex;
-    flex-direction: column;
-  }
-  #header #author h3 {
-    display: none;
-  }
-  #body #home #options #options-form div {
-    gap: 0.4rem;
   }
 }
 
 @media (max-width: 550px) {
+  html {
+    font-size: 14px;
+  }
   #wrapper {
     margin: auto 1rem;
   }
@@ -342,35 +338,73 @@ button.choice:disabled {
   #header #ref-link {
     display: none;
   }
-  #body {
-    height: 85vh;
+  #body #quiz #quiz-body {
+    gap: 1rem;
   }
-  #body #options #options-form div {
-    grid-template-columns: 1fr 2fr;
+  #body #quiz #quiz-body #quiz-choices {
+    gap: 1rem;
+  }
+  #body #quiz #quiz-body #quiz-choices button {
+    font-size: 1.6rem;
+    padding: 0.4rem 0.8rem;
   }
 }
 
 @media (max-width: 400px) {
-  #body #home > * {
-    padding: 1rem;
+  html {
+    font-size: 14px;
   }
-  #body #home #options #options-form div {
-    display: flex;
+  #body #quiz {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 300px) {
+  html {
+    font-size: 14px;
+  }
+  #body #quiz {
+    font-size: 0.7rem;
+  }
+  #body #quiz #quiz-choices {
+    display: flex !important;
     flex-direction: column;
   }
 }
 
 @media (max-height: 600px) {
-  #body #home #greeting {
-    display: none;
+  html {
+    font-size: 12px;
   }
-  #body #quiz #quiz-body #quiz-choices {
-    grid-template-columns: repeat(4, 1fr);
+}
+
+@media (max-height: 400px) {
+  #quiz-choices {
+    display: flex !important;
+  }
+}
+
+@media (max-width: 600px) and (max-height: 700px) {
+  html {
+    font-size: 14px;
   }
 }
 
 @media (max-width: 400px) and (max-height: 700px) {
   html {
-    font-size: 15px;
+    font-size: 14px;
+  }
+  #home > div {
+    padding: 0.4rem 0.8rem !important;
+  }
+  #quiz #quiz-body {
+    gap: 1rem;
+  }
+  #quiz #quiz-body #quiz-choices {
+    gap: 1rem;
+  }
+  #quiz #quiz-body #quiz-choices button {
+    font-size: 1rem;
+    padding: 0.4rem 0.8rem;
   }
 }

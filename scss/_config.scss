@@ -16,13 +16,13 @@ body {
     background: $dark;
     font-family: "Lucida Sans Unicode", "Trebuchet MS", "Lucida Grande",
         "Lucida Sans", Arial, sans-serif;
-    height: 100vh;
     overflow: hidden;
 }
 
 #wrapper {
-    margin: auto 4rem;
+    margin: auto 3rem;
     text-align: center;
+    height: 100vh;
 }
 
 a {
@@ -47,4 +47,10 @@ button:disabled {
 button.choice:disabled {
     background: transparent !important;
     cursor: initial !important;
+}
+
+button.correct:disabled,
+button.wrong:disabled {
+    opacity: 1 !important;
+    border-width: 2px !important;
 }

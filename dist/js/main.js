@@ -23,7 +23,6 @@ const form = document.getElementById("options-form"),
 const categories = {
     "General Knowledge": 9,
     Computers: 18,
-    Mathematics: 19,
     Geography: 22,
     History: 23,
 };
@@ -96,7 +95,7 @@ const quizCategorySpan = document.getElementById("quiz-category"),
         modal.style.display = "initial";
         setTimeout(() => {
             modal.style.display = "none";
-        }, 1500);
+        }, 1000);
     };
 
 let questionIndex = 1,
@@ -111,6 +110,7 @@ function startQuiz(arr) {
     totalQuestions = arr.length;
     question = arr[i].question;
     choices = [arr[i].correct_answer, ...arr[i].incorrect_answers].shuffle();
+    choices.forEach((val) => val.replaceAll("&#039;", "'"));
     quizCategorySpan.innerHTML = arr[i].category;
     currentQuestionSpan.innerHTML = questionIndex;
     totalQuestionsSpan.innerHTML = totalQuestions;
@@ -127,7 +127,7 @@ choiceButtons.forEach((btn) => btn.addEventListener("click", checkAnswer));
 
 function checkAnswer(e) {
     const answer = e.target.innerHTML;
-    const correctAns = questions[i].correct_answer;
+    const correctAns = questions[i].correct_answer.replaceAll("&#039;", "'");
     if (answer == correctAns) {
         e.target.classList.add("correct");
         flashModal(correctModal);

@@ -2,17 +2,6 @@
     display: initial !important;
 }
 
-.disabled {
-    color: initial !important;
-    cursor: default !important;
-
-    &:hover {
-        background: initial !important;
-        color: initial !important;
-        cursor: default !important;
-    }
-}
-
 .correct {
     border: green 1px solid !important;
     color: green !important;
