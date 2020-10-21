@@ -1,0 +1,23 @@
+{
+    "name": "quizzia",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "deploy": "gh-pages -d dist"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/youssefwaelnasr/quizzia.git"
+    },
+    "keywords": [],
+    "author": "Youssef Nasr",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/youssefwaelnasr/quizzia/issues"
+    },
+    "homepage": "https://youssefwaelnasr.github.io/quizzia",
+    "dependencies": {
+        "gh-pages": "^3.1.0"
+    }
+}
