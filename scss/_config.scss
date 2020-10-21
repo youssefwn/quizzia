@@ -1,0 +1,50 @@
+$dark: #292b2c;
+$light: #eee;
+$primary: #0275d8;
+$success: #5cb85c;
+$info: #5bc0de;
+$warning: #f0ad4e;
+$danger: #d9534f;
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: $dark;
+    font-family: "Lucida Sans Unicode", "Trebuchet MS", "Lucida Grande",
+        "Lucida Sans", Arial, sans-serif;
+    height: 100vh;
+    overflow: hidden;
+}
+
+#wrapper {
+    margin: auto 4rem;
+    text-align: center;
+}
+
+a {
+    color: initial;
+    text-decoration: none;
+    outline: 0;
+    border: 0;
+}
+
+select,
+input {
+    outline: 0;
+    border: 0;
+}
+
+button:disabled {
+    background: lighten($dark, 20%) !important;
+    cursor: default !important;
+    opacity: 0.5 !important;
+}
+
+button.choice:disabled {
+    background: transparent !important;
+    cursor: initial !important;
+}

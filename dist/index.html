@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/3ad7573e76.js" crossorigin="anonymous"></script>
+    <title>Quizzia</title>
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="header">
+            <div id="author">
+                <h3>
+                    Made by <span>YWN</span>
+                </h3>
+                <a href="https://github.com/youssefwaelnasr" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                <a href="https://stackoverflow.com/users/13515557/youssef" target="_blank">
+                    <i class="fab fa-stack-overflow"></i>
+                </a>
+            </div>
+
+            <div id="logo-div">
+                <h1 id="logo"><a href="index.html">Quizzia</a></h1>
+            </div>
+
+            <a id="ref-link" target="_blank" href="https://opentdb.com/">
+                <div id="ref">
+                    <h4>Made using the Open Trivia DB. Click to check them out.
+                    </h4>
+                </div>
+            </a>
+        </div>
+
+        <div id="body">
+            <div id="home" class="show">
+                <div id="greeting">
+                    <h2>Welcome to Quizzia!</h2>
+                    <p>
+                        This is a trivia multiple-choice quiz game to test your general knowledge.
+                    </p>
+                    <p>
+                        Pick one of the fields
+                        below, any number of questions you'd like (between 1 and 50), and difficulty, then click start.
+                    </p>
+                </div>
+
+                <div id="options">
+                    <form id="options-form">
+                        <div>
+                            <label class="options-label" for="amount">Number of Questions</label>
+                            <input id="amount" class="options-input" type="number" min="0" max="50">
+                        </div>
+                        <div>
+                            <label class="options-label" for="category">Select Category</label>
+                            <select id="category" class="options-input" name="category">
+                                <option selected disabled>Select Category</option>
+                                <option>General Knowledge</option>
+                                <option>Computers</option>
+                                <option>Mathematics</option>
+                                <option>Geography</option>
+                                <option>History</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="options-label" for="difficulty">Select Difficulty</label>
+                            <select id="difficulty" class="options-input" name="difficulty">
+                                <option selected disabled>Select Difficulty</option>
+                                <option>Easy</option>
+                                <option>Medium</option>
+                                <option>Hard</option>
+                            </select>
+                        </div>
+                        <button>Start!</button>
+                    </form>
+                </div>
+            </div>
+
+            <div id="quiz">
+                <div id="quiz-top">
+                    <h3>
+                        <span id="quiz-category"></span> Question <span id="current-question"></span> of <span
+                            id="total-questions"></span>
+                    </h3>
+                    <h3>
+                        Correct Answers: <span id="correct"></span>/<span id="passed-questions"></span>
+                    </h3>
+                </div>
+                <div id="quiz-body">
+                    <div id="quiz-title">
+                        <h2>
+                            Question #<span id="question-number"></span> - <span id="question"></span>
+                        </h2>
+                    </div>
+                    <div id="quiz-choices">
+                        <button class="choice"></button>
+                        <button class="choice"></button>
+                        <button class="choice"></button>
+                        <button class="choice"></button>
+                    </div>
+                    <button id="next" disabled>Next</button>
+                </div>
+            </div>
+
+            <div id="finished">
+                <div>
+                    <h2>
+                        You have finished <span id="finished-amount"></span> <span id="finished-category"></span>
+                        questions
+                        with a score of
+                        <span id="finished-correct"></span>/<span id="finished-total"></span>.
+                    </h2>
+                    <button>
+                        <a href="index.html">
+                            <i class="fas fa-chevron-circle-left"></i> Restart
+                        </a>
+                    </button>
+                </div>
+            </div>
+
+            <div id="correct-modal" class="modal">
+                <div>
+                    <i class="fas fa-check-circle"></i>
+                </div>
+            </div>
+
+            <div id="wrong-modal" class="modal">
+                <div>
+                    <i class="fas fa-times-circle"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script type="module" src="js/main.js"></script>
+</body>
+
+</html>
