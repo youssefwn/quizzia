@@ -1,0 +1,8 @@
+{
+    "category": "General Knowledge",
+    "type": "multiple",
+    "difficulty": "medium",
+    "question": "What does a milliner make and sell?",
+    "correct_answer": "Hats",
+    "incorrect_answers": ["Shoes", "Belts", "Shirts"]
+}

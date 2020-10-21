@@ -42,10 +42,8 @@
                     <h2>Welcome to Quizzia!</h2>
                     <p>
                         This is a trivia multiple-choice quiz game to test your general knowledge.
-                    </p>
-                    <p>
                         Pick one of the fields
-                        below, any number of questions you'd like (between 1 and 50), and difficulty, then click start.
+                        below, any number of questions you'd like (between 1 and 30), and difficulty, then click start.
                     </p>
                 </div>
 
@@ -53,15 +51,14 @@
                     <form id="options-form">
                         <div>
                             <label class="options-label" for="amount">Number of Questions</label>
-                            <input id="amount" class="options-input" type="number" min="0" max="50">
+                            <input id="amount" class="options-input" type="number" min="0" max="30">
                         </div>
-                        <div>
+                        <div id="settings">
                             <label class="options-label" for="category">Select Category</label>
                             <select id="category" class="options-input" name="category">
                                 <option selected disabled>Select Category</option>
                                 <option>General Knowledge</option>
                                 <option>Computers</option>
-                                <option>Mathematics</option>
                                 <option>Geography</option>
                                 <option>History</option>
                             </select>
