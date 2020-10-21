@@ -1,3 +1,5 @@
-# Quizzia
+# Quizzia (Trivia Quizzes)
 
-#### Removed Sass files from gh-pages branch for deployment.
+#### Made with Vanilla JS using the Fetch API, and the Open Trivia DB API.
+
+#### Sass-less branch for deployment.
