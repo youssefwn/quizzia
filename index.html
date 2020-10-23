@@ -51,13 +51,17 @@
                     <form id="options-form">
                         <div>
                             <label class="options-label" for="amount">Number of Questions</label>
-                            <input id="amount" class="options-input" type="number" min="0" max="30">
+                            <input id="amount" class="options-input" type="number" min="0" max="30" placeholder="1-30">
                         </div>
                         <div id="settings">
                             <label class="options-label" for="category">Select Category</label>
                             <select id="category" class="options-input" name="category">
                                 <option selected disabled>Select Category</option>
                                 <option>General Knowledge</option>
+                                <option>Film</option>
+                                <option>Music</option>
+                                <option>Video Games</option>
+                                <option>Science & Nature</option>
                                 <option>Computers</option>
                                 <option>Geography</option>
                                 <option>History</option>
@@ -106,7 +110,8 @@
             <div id="finished">
                 <div>
                     <h2>
-                        You have finished <span id="finished-amount"></span> <span id="finished-category"></span>
+                        You have finished <span id="finished-amount"></span> <span id="finished-difficulty"></span>
+                        <span id="finished-category"></span>
                         questions
                         with a score of
                         <span id="finished-correct"></span>/<span id="finished-total"></span>.
