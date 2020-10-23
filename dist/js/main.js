@@ -22,6 +22,10 @@ const form = document.getElementById("options-form"),
 
 const categories = {
     "General Knowledge": 9,
+    Film: 11,
+    Music: 12,
+    "Video Games": 15,
+    "Science & Nature": 17,
     Computers: 18,
     Geography: 22,
     History: 23,
@@ -86,6 +90,7 @@ const quizCategorySpan = document.getElementById("quiz-category"),
     choiceButtons = Array.from(document.getElementsByClassName("choice")),
     finishedDiv = document.getElementById("finished"),
     finishedAmount = document.getElementById("finished-amount"),
+    finishedDifficulty = document.getElementById("finished-difficulty"),
     finishedCategory = document.getElementById("finished-category"),
     finishedCorrect = document.getElementById("finished-correct"),
     finishedTotal = document.getElementById("finished-total"),
@@ -152,6 +157,7 @@ function nextQuestion() {
         quiz.classList.remove("show");
         finishedDiv.classList.add("show");
         finishedAmount.innerHTML = i;
+        finishedDifficulty.innerHTML = difficulty.value;
         finishedCategory.innerHTML = quizCategorySpan.innerHTML;
         finishedCorrect.innerHTML = correctAnswers;
         finishedTotal.innerHTML = i;
