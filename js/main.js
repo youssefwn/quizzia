@@ -39,29 +39,29 @@ function getAPI(e) {
     e.preventDefault();
     let goodInput = true;
     if (amount.value == 0 || amount.value == "") {
-        amount.classList.add("wrong");
+        amount.classList.add("border", "border-danger");
         setTimeout(() => {
-            amount.classList.remove("wrong");
+            amount.classList.remove("border", "border-danger");
         }, 3000);
         goodInput = false;
     }
     if (category.value == "Select Category") {
-        category.classList.add("wrong");
+        category.classList.add("border", "border-danger");
         setTimeout(() => {
-            category.classList.remove("wrong");
+            category.classList.remove("border", "border-danger");
         }, 3000);
         goodInput = false;
     }
     if (difficulty.value == "Select Difficulty") {
-        difficulty.classList.add("wrong");
+        difficulty.classList.add("border", "border-danger");
         setTimeout(() => {
-            difficulty.classList.remove("wrong");
+            difficulty.classList.remove("border", "border-danger");
         }, 3000);
         goodInput = false;
     }
     if (!goodInput) {
         setTimeout(() => {
-            alert("Please fill out all the inputs.");
+            alert("Please fill out all the inputs correctly.");
         }, 100);
     } else {
         api = `https://opentdb.com/api.php?amount=${amount.value}&category=${
@@ -101,6 +101,16 @@ const quizCategorySpan = document.getElementById("quiz-category"),
         setTimeout(() => {
             modal.style.display = "none";
         }, 1000);
+    },
+    adjustBtnWidth = (btns) => {
+        let maxWidth = 0;
+        btns.forEach((btn) => {
+            btn.style.width = "initial";
+            if (btn.offsetWidth > maxWidth) {
+                maxWidth = btn.offsetWidth;
+            }
+        });
+        btns.forEach((btn) => (btn.style.width = `${maxWidth}px`));
     };
 
 let questionIndex = 1,
@@ -126,6 +136,7 @@ function startQuiz(arr) {
     for (let j in choiceButtons) {
         choiceButtons[j].innerHTML = choices[j];
     }
+    adjustBtnWidth(choiceButtons);
 }
 
 choiceButtons.forEach((btn) => btn.addEventListener("click", checkAnswer));
@@ -177,5 +188,6 @@ function nextQuestion() {
             choiceButtons[j].classList.remove("correct");
             choiceButtons[j].classList.remove("wrong");
         }
+        adjustBtnWidth(choiceButtons);
     }
 }
