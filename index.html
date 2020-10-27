@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css"
+        integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="css/style.css">
+    <script src="https://kit.fontawesome.com/3ad7573e76.js" crossorigin="anonymous"></script>
+    <title>Quizzia</title>
+</head>
+
+<body class="bg-dark">
+    <div class="container-lg px-0">
+        <nav class="navbar navbar-expand-lg navbar-light bg-light mb-4">
+            <a class="navbar-brand mx-auto" href="index.html">
+                <h1><i class="fas fa-globe"></i> Quizzia</h1>
+            </a>
+        </nav>
+
+        <div id="body" class="bg-light text-center px-sm-4 px-2 py-4">
+            <div id="home" class="show">
+                <h2>Welcome to Quizzia!</h2>
+                <p class="border-bottom pb-3 mb-3">
+                    This is a trivia multiple-choice quiz game to test your general knowledge.
+                    Pick one of the fields
+                    below, any number of questions you'd like (between 1 and 30), and difficulty, then click start.
+                </p>
+
+                <form id="options-form">
+                    <div class="form-group">
+                        <label class="options-label">Number of Questions</label>
+                        <input id="amount" class="form-control" type="number" min="0" max="30" placeholder="1-30">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="options-label">Select Category</label>
+                        <select id="category" class="form-control" name="category">
+                            <option selected disabled>Select Category</option>
+                            <option>General Knowledge</option>
+                            <option>Film</option>
+                            <option>Music</option>
+                            <option>Video Games</option>
+                            <option>Science & Nature</option>
+                            <option>Computers</option>
+                            <option>Geography</option>
+                            <option>History</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label class="options-label">Select Difficulty</label>
+                        <select id="difficulty" class="form-control" name="difficulty">
+                            <option selected disabled>Select Difficulty</option>
+                            <option>Easy</option>
+                            <option>Medium</option>
+                            <option>Hard</option>
+                        </select>
+                    </div>
+                    <button class="btn btn-lg btn-primary">Start!</button>
+                </form>
+            </div>
+
+            <div id="quiz">
+                <div class="d-flex justify-content-lg-around justify-content-between mb-4">
+                    <h4>
+                        <span id="quiz-category"></span> Question <span id="current-question"></span> of <span
+                            id="total-questions"></span>
+                    </h4>
+                    <h4>
+                        Correct Answers: <span id="correct"></span>/<span id="passed-questions"></span>
+                    </h4>
+                </div>
+
+                <h3 class="mb-4">
+                    Question #<span id="question-number"></span> - <span id="question"></span>
+                </h3>
+
+                <div class="row mb-4">
+                    <div class="col-md-12 mb-2 d-flex justify-content-center">
+                        <button class="choice btn btn-lg btn-light btn-outline-dark"></button>
+                        <button class="choice btn btn-lg btn-light btn-outline-dark"></button>
+                    </div>
+                    <div class="col-md-12 d-flex justify-content-center">
+                        <button class="choice btn btn-lg btn-light btn-outline-dark"></button>
+                        <button class="choice btn btn-lg btn-light btn-outline-dark"></button>
+                    </div>
+                </div>
+
+                <button id="next" class="btn btn-lg btn-primary" disabled>Next</button>
+            </div>
+
+            <div id="finished">
+                <h3 class="mb-4">
+                    You have finished <span id="finished-amount"></span> <span id="finished-difficulty"></span>
+                    <span id="finished-category"></span>
+                    questions
+                    with a score of
+                    <span id="finished-correct"></span>/<span id="finished-total"></span>.
+                </h3>
+
+                <a href="index.html" class="btn btn-large btn-primary">
+                    <i class="fas fa-chevron-circle-left"></i> Restart
+                </a>
+            </div>
+
+            <div id="correct-modal" class="answer-modal text-success">
+                <i class="fas fa-check-circle"></i>
+            </div>
+
+            <div id="wrong-modal" class="answer-modal text-danger">
+                <i class="fas fa-times-circle"></i>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+
+</html>
