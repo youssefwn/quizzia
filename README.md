@@ -4,4 +4,4 @@
 
 #### JavaScript using the Fetch API for functionality
 
-#### [Open Trivia DB API](https://opentdb.com/) for data.
+#### [Open Trivia DB API](https://opentdb.com/) for data
