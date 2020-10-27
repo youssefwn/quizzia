@@ -1,3 +1,7 @@
 # Quizzia (Trivia Quizzes)
 
-#### Made primarily with Sass, Vanilla JS using the Fetch API, and the Open Trivia DB API.
+#### Bootstrap 4.5 for UI
+
+#### JavaScript using the Fetch API for functionality
+
+#### [Open Trivia DB API](https://opentdb.com/) for data.
