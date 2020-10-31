@@ -77,7 +77,10 @@ function fetchQuiz() {
     fetch(api)
         .then((response) => response.json())
         .then((data) => startQuiz(data.results))
-        .catch((err) => console.log(err));
+        .catch((err) => {
+            alert(err);
+            console.error(err);
+        });
 }
 
 const quizCategorySpan = document.getElementById("quiz-category"),
