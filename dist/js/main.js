@@ -128,7 +128,7 @@ function startQuiz(arr) {
     totalQuestions = arr.length;
     question = arr[i].question;
     choices = [arr[i].correct_answer, ...arr[i].incorrect_answers].shuffle();
-    choices.forEach((val) => val.replaceAll("&#039;", "'"));
+    choices.forEach((val) => val.replace(/&#039;/g, "'"));
     quizCategorySpan.innerHTML = arr[i].category;
     currentQuestionSpan.innerHTML = questionIndex;
     totalQuestionsSpan.innerHTML = totalQuestions;
